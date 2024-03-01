@@ -10,12 +10,12 @@ exports.config = {
         // 'path/to/excluded/files'
     ],
     
-    maxInstances: 2,
+    maxInstances: 3,
     capabilities: [{
         maxInstances: 1,
         browserName: 'chrome'
     }, {
-        maxInstances: 1,
+        maxInstances: 2,
         browserName: 'MicrosoftEdge'
     }],
 

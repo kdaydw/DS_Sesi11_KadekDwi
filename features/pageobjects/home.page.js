@@ -1,13 +1,16 @@
 const { $, expect } = require('@wdio/globals')
 const Page = require('./page');
 
+const listProducts = $('.inventory_list')
 
 class HomePage extends Page {
-    get listProducts() { return $('.inventory_list'); }
-
     async validdateHomePage() {
         await expect(browser).toHaveUrlContaining('/inventory.html')
-        await expect(this.listProducts).toBeDisplayed()
+        await expect(listProducts).toBeDisplayed()
+    }
+
+    async addProduct(idProduct) {
+        await $(`#${idProduct}`).click()
     }
 
     open () {
